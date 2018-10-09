@@ -44,13 +44,3 @@ runTests = do
   putStrLn $ testHandRank aTwoPair       TwoPair
   putStrLn $ testHandRank aPair          APair
   putStrLn $ testHandRank aHighCard      HighCard
-
--- Example of guard in where clause
-divides :: Integer -> Integer -> Bool
-divides small big = (big `mod` small == 0)
-
-lowestDivisor :: Integer -> Integer
-lowestDivisor n = lowestDivisorHelper 2 n
-  where lowestDivisorHelper m n
-          | (m `divides` n) = m  -- these should belong to lowestDivisorHelper
-          | otherwise = lowestDivisorHelper (m+1) n
